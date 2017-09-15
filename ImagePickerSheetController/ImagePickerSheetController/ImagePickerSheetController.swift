@@ -37,11 +37,11 @@ open class ImagePickerSheetController: UIViewController {
     fileprivate lazy var sheetController: SheetController = {
         let controller = SheetController(previewCollectionView: self.previewCollectionView, imagePicker: self)
         controller.actionHandlingCallback = { [weak self] in
-            self?.dismiss(animated: true, completion: { _ in
+            self?.dismiss(animated: true) {
                 // Possible retain cycle when action handlers hold a reference to the IPSC
                 // Remove all actions to break it
                 controller.removeAllActions()
-            })
+            }
         }
         
         return controller
