@@ -148,7 +148,7 @@ open class ImagePickerSheetController: UIViewController {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(sheetController, name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.removeObserver(sheetController, name: .UIApplicationDidEnterBackground, object: nil)
     }
     
     // MARK: - View Lifecycle
