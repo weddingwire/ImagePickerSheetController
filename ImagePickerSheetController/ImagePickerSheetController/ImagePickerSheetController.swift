@@ -202,6 +202,12 @@ open class ImagePickerSheetController: UIViewController {
     open func addAction(_ action: ImagePickerAction) {
         sheetController.addAction(action)
         view.setNeedsLayout()
+      
+        // Explicitly disable animations
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        self.view.layoutIfNeeded()
+        CATransaction.commit()
     }
     
     // MARK: - Images
