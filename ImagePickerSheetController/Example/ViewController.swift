@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let button = UIButton(type: .system)
-        button.setTitle("Tap Me!", for: UIControlState())
+        button.setTitle("Tap Me!", for: UIControl.State())
         button.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(button)
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     @objc
     func presentImagePickerSheet(_ gestureRecognizer: UITapGestureRecognizer) {
-        let presentImagePickerController: (UIImagePickerControllerSourceType) -> () = { source in
+        let presentImagePickerController: (UIImagePickerController.SourceType) -> () = { source in
             let controller = UIImagePickerController()
             controller.delegate = self
             var sourceType = source
